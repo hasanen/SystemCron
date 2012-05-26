@@ -28,4 +28,5 @@ if (! $this->CheckAccess())
     echo $this->ProcessTemplate('adminpanel.tpl');
 
 
+
 ?>

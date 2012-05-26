@@ -90,8 +90,6 @@ class Cron{
             
         $crontab = str_replace(chr(13), '', $crontab);
             $count = 0;
-            //couldn't get callback working, if you get, please inform me!
-            //$crontab = preg_replace_callback(sprintf('/%s(.*)%s/sm', $modulestart, $moduleend), array($this, 'modifyCrontab'), $crontab, $count);
             $newline = $modulestart . '$1'. $job . chr(10) . $moduleend;
             $crontab = preg_replace(sprintf('/%s(.*)%s/sm', $modulestart, $moduleend), $newline, $crontab, -1, $count);
             if($count < 1){
@@ -99,12 +97,38 @@ class Cron{
                 $crontab .= $job . chr(10);
                 $crontab .= $moduleend . chr(10);
             }
-            
-            return $this->saveCrontab($crontab);
+            return $this->saveCrontab(trim($crontab));
         }
     }
-    public function modifyCrontab($match){
-        return "moi";
+    /**
+     * Removes given job from crontab
+     */
+    private $_tempJob;
+    function removeJob($job, $module){
+        if(get_class($job) === 'CronJob'){
+            $crontab = $this->getCrontab();
+            $modulestart = sprintf('#CMSMSModule:%s', $module);
+            $moduleend = sprintf('#ENDOF-CMSMSModule:%s', $module);            
+            
+            $crontab = str_replace(chr(13), '', $crontab);
+            $count = 0;
+            $this->_tempJob = $job;
+            $crontab = preg_replace_callback(sprintf('/%s(.*)%s/sm', $modulestart, $moduleend), array($this, 'removeFromCrontab'), $crontab, -1, $count);
+            if($count < 1){
+                $crontab .= chr(10) . $modulestart . chr(10);
+                $crontab .= $job . chr(10);
+                $crontab .= $moduleend . chr(10);
+            }
+            return $this->saveCrontab(trim($crontab));
+        }
+    }
+    private function removeFromCrontab($match){
+        $jobs = trim(str_replace($this->_tempJob.chr(10), '', $match[1]));
+        if(strlen($jobs) > 0){
+            return str_replace($this->_tempJob.chr(10), '', $match[0]);
+        } else {
+            return '';
+        }
     }
     
     /**
