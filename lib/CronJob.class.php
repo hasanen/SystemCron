@@ -8,7 +8,7 @@ class CronJob{
 	private $dayOfWeek;
 	private $job;
  
-	public function __construct($minute, $hour, $dayOfMonth, $month, $dayOfWeek, $job){
+	public function __construct($job, $minute = '', $hour = '', $dayOfMonth = '', $month = '', $dayOfWeek = ''){
 		$this->setMinute($minute);
 		$this->setHour($hour);
 		$this->setDayOfMonth($dayOfMonth);
@@ -39,22 +39,47 @@ class CronJob{
  
 	 /* Setters */
 	public function setMinute($minute){
+        if(empty($minute)){
+            $minute = '*';
+        }
 		$this->minute = $minute;
 	}
 	public function setHour($hour){
+        if(empty($hour)){
+            $hour = '*';
+        }
 		$this->hour = $hour;
 	}
 	public function setDayOfMonth($dayOfMonth){
+        if(empty($dayOfMonth)){
+            $dayOfMonth = '*';
+        }
 		$this->dayOfMonth = $dayOfMonth;
 	}
 	public function setMonth($month){
+        if(empty($month)){
+            $month = '*';
+        }
 		$this->month = $month;
 	}
 	public function setDayOfWeek($dayOfWeek){
+        if(empty($dayOfWeek)){
+            $dayOfWeek = '*';
+        }
 		$this->dayOfWeek = $dayOfWeek;
 	}
 	public function setJob($job){
 		$this->job = $job;
 	}
+    
+    public function __toString(){
+        return sprintf('%s %s %s %s %s %s',
+        $this->getMinute(),
+        $this->getHour(),
+        $this->getDayOfMonth(),
+        $this->getMonth(),
+        $this->getDayOfWeek(),
+        $this->getJob());
+    }
 }
 ?>
