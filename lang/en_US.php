@@ -7,7 +7,7 @@ you want to unsinstall this fine module?';
 $lang['uninstalled'] = 'Module Uninstalled.';
 $lang['installed'] = 'Module version %s installed.';
 $lang['upgraded'] = 'Module upgraded to version %s.';
-$lang['moddescription'] = 'Access systems cron and offer other modules easy interface to add &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quot;real&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quot; cron jobs.';
+$lang['moddescription'] = 'Edit cron jobs via cmsms.';
 
 $lang['error'] = 'Error!';
 $land['admin_title'] = 'System cron Admin Panel';
