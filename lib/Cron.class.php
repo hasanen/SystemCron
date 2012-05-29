@@ -122,6 +122,29 @@ class Cron{
             return $this->saveCrontab(trim($crontab));
         }
     }
+    
+    /**
+     * Remove all jobs from given module
+     */
+    function removeAllJobs($module){
+        if(is_string($module)){
+            $crontab = $this->getCrontab();
+            $modulestart = sprintf('#CMSMSModule:%s', $module);
+            $moduleend = sprintf('#ENDOF-CMSMSModule:%s', $module);            
+            
+            $crontab = str_replace(chr(13), '', $crontab);
+            $count = 0;
+            $this->_tempJob = $job;
+            $crontab = preg_replace_callback(sprintf('/%s(.*)%s/sm', $modulestart, $moduleend), array($this, 'returnEmpty'), $crontab, -1, $count);
+            //$crontab = preg_replace(sprintf('/%s(.*)%s/sm', $modulestart, $moduleend), '$1', $crontab, -1, $count);
+            if($count < 1){
+                $crontab .= chr(10) . $modulestart . chr(10);
+                $crontab .= $job . chr(10);
+                $crontab .= $moduleend . chr(10);
+            }
+            return $this->saveCrontab(trim($crontab));
+        }
+    }
     private function removeFromCrontab($match){
         $jobs = trim(str_replace($this->_tempJob.chr(10), '', $match[1]));
         if(strlen($jobs) > 0){
@@ -129,6 +152,9 @@ class Cron{
         } else {
             return '';
         }
+    }
+    private function returnEmpty($match){        
+        return '';
     }
     
     /**
