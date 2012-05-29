@@ -1,5 +1,4 @@
 <?php
-
 if (!isset($gCms)) exit;
 
 if (! $this->CheckAccess())

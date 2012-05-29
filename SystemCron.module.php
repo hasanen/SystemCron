@@ -3,7 +3,6 @@ require_once('lib/Cron.class.php');
 require_once('lib/CronJob.class.php');
 #-------------------------------------------------------------------------
 # Module: systemcron - Access systems cron and offer other modules easy interface to add &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quot;real&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quot; cron jobs.
-# Version: 1.0, Joni Hasanen
 #
 #-------------------------------------------------------------------------
 # CMS - CMS Made Simple is (c) 2012 by Ted Kulp (wishy@cmsmadesimple.org)
