@@ -11,7 +11,7 @@ $lang['moddescription'] = 'Edit cron jobs via cmsms.';
 
 $lang['error'] = 'Error!';
 $land['admin_title'] = 'System cron Admin Panel';
-$lang['admindescription'] = 'Admin description of System cron';
+$lang['admindescription'] = $lang['moddescription'];
 $lang['accessdenied'] = 'Access Denied. Please check your permissions.';
 $lang['postinstall'] = 'Post Install Message, (e.g., Be sure to set "Use system cron" permissions to use this module!)';
 
@@ -24,14 +24,14 @@ $lang['btn.cancel'] = 'Cancel';
 $lang['operation.succeed'] = 'Operation succeed';
 
 $lang['changelog'] = '<ul>
-<li>Version 1.0 - 26 May 2012. Initial Release.</li>
+<li>Version 1.0.1 - 21 August 2012. Tested with version 1.11.1.</li>
+<li>Version 1.0 - 25 June 2012. Initial release.</li>
+<li>Version 1.0beta - 26 May 2012. Initial beta release.</li>
 </ul>';
 $lang['help'] = '<h3>What Does This Do?</h3>
-<p>Access systems cron and offer other modules easy interface to add &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quot;real&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quot; cron jobs.</p>
+<p>Access systems cron and offer other modules easy interface to add &quot;real&quot; cron jobs.</p>
 <h3>How Do I Use It</h3>
-<p>[FIX-ME!]</p>
-<h3>What Parameters Does It Take</h3>
-<p>[FIX-ME!]</p>
+<p>Please read https://github.com/hasanen/SystemCron/wiki</p>
 <h3>Support</h3>
 <p>As per the GPL, this software is provided as-is. Please read the text of the license for the full disclaimer.</p>
 <h3>Copyright and License</h3>
