@@ -24,6 +24,7 @@ $lang['btn.cancel'] = 'Cancel';
 $lang['operation.succeed'] = 'Operation succeed';
 
 $lang['changelog'] = '<ul>
+<li>Version 1.0.2 - 19 September 2012. Tested with version 1.11.2.</li>
 <li>Version 1.0.1 - 21 August 2012. Tested with version 1.11.1.</li>
 <li>Version 1.0 - 25 June 2012. Initial release.</li>
 <li>Version 1.0beta - 26 May 2012. Initial beta release.</li>
