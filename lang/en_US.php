@@ -1,7 +1,6 @@
 <?php
 $lang['friendlyname'] = 'System cron';
-$lang['postinstall'] = 'Post Install Message.';
-$lang['postuninstall'] = 'Post Uninstall Message, e.g., "Curses! Foiled Again!"';
+$lang['postuninstall'] = 'Thank you for using this module';
 $lang['really_uninstall'] = 'Really? Are you sure
 you want to unsinstall this fine module?';
 $lang['uninstalled'] = 'Module Uninstalled.';
@@ -13,7 +12,7 @@ $lang['error'] = 'Error!';
 $land['admin_title'] = 'System cron Admin Panel';
 $lang['admindescription'] = $lang['moddescription'];
 $lang['accessdenied'] = 'Access Denied. Please check your permissions.';
-$lang['postinstall'] = 'Post Install Message, (e.g., Be sure to set "Use system cron" permissions to use this module!)';
+$lang['postinstall'] = 'Be sure to set "Use system cron" permissions to use this module!';
 
 $lang['msg.username'] = 'Crontab for user <b>%s</b> is:';
 
@@ -24,6 +23,7 @@ $lang['btn.cancel'] = 'Cancel';
 $lang['operation.succeed'] = 'Operation succeed';
 
 $lang['changelog'] = '<ul>
+<li>Version 1.0.3 - 20 October 2012. Tested with version 1.11.2.1.</li>
 <li>Version 1.0.2 - 19 September 2012. Tested with version 1.11.2.</li>
 <li>Version 1.0.1 - 21 August 2012. Tested with version 1.11.1.</li>
 <li>Version 1.0 - 25 June 2012. Initial release.</li>
