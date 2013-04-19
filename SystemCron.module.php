@@ -72,7 +72,7 @@ class systemcron extends CMSModule
 	  ---------------------------------------------------------*/
 	function GetVersion()
 	{
-            return '1.0.6';
+            return '1.0.7';
 	}
 
 	/*---------------------------------------------------------
@@ -283,7 +283,7 @@ class systemcron extends CMSModule
 	   ---------------------------------------------------------*/
 	function MaximumCMSVersion()
 	{
-		return "1.11.5";
+		return "1.11.6";
 	}
 
 
